@@ -25,12 +25,10 @@ dockers:
     - --label=org.opencontainers.image.version={{ .Version }}
     - --label=org.opencontainers.image.created={{ .Date }}
     - --label=org.opencontainers.image.revision={{ .FullCommit }}
-release:
-  skip_publish: true
 checksum:
   name_template: 'checksums.txt'
-# snapshot:
-#   name_template: "{{ incpatch .Version }}-next"
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
 changelog:
   sort: asc
   filters:
